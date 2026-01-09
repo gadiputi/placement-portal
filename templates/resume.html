@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Resume Details</h2>
+
+        <form method="post">
+            <input type="url" name="github" placeholder="GitHub Profile Link" required>
+            <input type="url" name="linkedin" placeholder="LinkedIn Profile Link" required>
+
+            <button type="submit">Save</button>
+        </form>
+
+        <div class="signup">
+            <a href="/dashboard">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Education Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Education Details</h2>
+
+        <form method="post">
+            <input type="number" step="0.01" name="cgpa" placeholder="CGPA" required>
+            <input type="number" name="backlogs" placeholder="Backlogs" required>
+            <button>Save</button>
+        </form>
+
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

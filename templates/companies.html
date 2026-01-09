@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Companies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Eligible Companies</h2>
+
+        {% for c in companies %}
+            <p>{{ c }}  
+            <a href="/apply/{{ c }}">Apply</a></p>
+        {% endfor %}
+
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

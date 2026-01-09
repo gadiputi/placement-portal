@@ -1,0 +1,87 @@
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #ffebe0;   /* peach background */
+}
+
+/* ================= LOGIN / SIGNUP ================= */
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background: #ff8c66;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #ff7043;
+}
+
+.signup {
+    margin-top: 12px;
+}
+
+.signup a {
+    color: #ff7043;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ================= DASHBOARD ONLY ================= */
+.dashboard-wrapper {
+    max-width: 420px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+.dashboard-box {
+    background: #e6b8a2;   /* light maroon */
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.dashboard-box a {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+
+.dashboard-box:hover {
+    background: #d9a184;
+}

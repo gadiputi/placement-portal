@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Resume Verification</h2>
+
+        <p><b>Resume Score:</b> {{ score }}%</p>
+        <p><b>Status:</b> {{ status }}</p>
+
+        {% if status == "GENUINE" %}
+            <a href="/companies">Proceed to Companies</a>
+        {% else %}
+            <p style="color:red;">Resume looks fake or incomplete. Please update.</p>
+            <a href="/resume">Update Resume</a>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

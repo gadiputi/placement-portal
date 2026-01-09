@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-box">
+        <h2>Applications</h2>
+
+        {% for row in data %}
+            <p>
+                <b>{{ row[0] }}</b><br>
+                Company: {{ row[1] }}<br>
+                Date: {{ row[2] }}<br>
+                Status: {{ row[3] }}<br>
+
+                <a href="/admin/update/{{ row[0] }}/{{ row[1] }}/Shortlisted">Shortlist</a> |
+                <a href="/admin/update/{{ row[0] }}/{{ row[1] }}/Rejected">Reject</a> |
+                <a href="/admin/update/{{ row[0] }}/{{ row[1] }}/Selected">Select</a>
+            </p>
+            <hr>
+        {% endfor %}
+
+        <a href="/admin/logout">Logout</a>
+    </div>
+</div>
+
+</body>
+</html>

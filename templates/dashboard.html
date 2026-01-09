@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <p><b>Resume Status:</b> {{ status }}</p>
+
+    <div class="dashboard-box">
+        <a href="/education">Education Details</a>
+    </div>
+
+    <div class="dashboard-box">
+        <a href="/resume">Resume Details</a>
+    </div>
+
+    <div class="dashboard-box">
+        <a href="/verify">Resume Verification</a>
+    </div>
+
+    <div class="dashboard-box">
+        <a href="/companies">Companies</a>
+    </div>
+
+    <div class="dashboard-box">
+        <a href="/status">Application Status</a>
+    </div>
+
+    <div class="dashboard-box">
+        <a href="/logout">Logout</a>
+    </div>
+
+</div>
+
+</body>
+</html>
