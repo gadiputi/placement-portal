@@ -1,23 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Education Details</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe5d0; /* peach background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #d2a679; /* light brown */
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c4915f;
+        }
+    </style>
 </head>
 <body>
 
-<div class="login-wrapper">
-    <div class="login-box">
-        <h2>Education Details</h2>
+<div class="box">
+    <h2>Education Details</h2>
 
-        <form method="post">
-            <input type="number" step="0.01" name="cgpa" placeholder="CGPA" required>
-            <input type="number" name="backlogs" placeholder="Backlogs" required>
-            <button>Save</button>
-        </form>
+    <form method="POST">
 
-        <a href="/dashboard">Back to Dashboard</a>
-    </div>
+        <!-- COLLEGE NAME -->
+        <label>College Name</label>
+        <input type="text" name="college" placeholder="Enter your college name" required>
+
+        <!-- DEGREE -->
+        <label>Degree</label>
+        <select name="degree" required>
+            <option value="">-- Select Degree --</option>
+            <option value="BTECH">B.Tech</option>
+            <option value="MTECH">M.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+        </select>
+
+        <!-- DEPARTMENT -->
+        <label>Department</label>
+        <select name="department" required>
+            <option value="">-- Select Department --</option>
+            <option value="CSE">Computer Science (CSE)</option>
+            <option value="IT">Information Technology (IT)</option>
+            <option value="ECE">Electronics (ECE)</option>
+            <option value="EEE">Electrical (EEE)</option>
+            <option value="MECH">Mechanical</option>
+            <option value="CIVIL">Civil</option>
+            <option value="AI">Artificial Intelligence</option>
+            <option value="DS">Data Science</option>
+            <option value="CSBS">CSBS</option>
+        </select>
+
+        <!-- CGPA / PERCENTAGE -->
+        <label>CGPA / Percentage</label>
+        <input type="number" step="0.01" name="cgpa" placeholder="Example: 7.8 or 78" required>
+
+        <!-- BACKLOGS -->
+        <label>Number of Backlogs</label>
+        <input type="number" name="backlogs" placeholder="0 if none" required>
+
+        <button type="submit">Save Education Details</button>
+    </form>
+
 </div>
 
 </body>
