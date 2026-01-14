@@ -1,8 +1,9 @@
 async function loadStudents() {
   try {
-    // CHANGE THIS URL AFTER BACKEND IS DEPLOYED
-    const response = await fetch("https://placement-portal-backend.onrender.com/api/students")
-;
+    const response = await fetch(
+      "https://placement-portal-zj38.onrender.com/api/students"
+    );
+
     const students = await response.json();
 
     const list = document.getElementById("studentList");
@@ -15,5 +16,6 @@ async function loadStudents() {
     });
   } catch (error) {
     alert("Backend not connected yet!");
+    console.error(error);
   }
 }
