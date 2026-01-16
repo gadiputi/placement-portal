@@ -4,16 +4,13 @@ async function loadStudents() {
       "https://placement-portal-zj38.onrender.com/api/students"
     );
 
+    if (!response.ok) {
+      throw new Error("Backend not connected");
+    }
+
     const students = await response.json();
-
-    const list = document.getElementById("studentList");
-    list.innerHTML = "";
-
-    students.forEach(student => {
-      const li = document.createElement("li");
-      li.textContent = `${student.name} - ${student.branch}`;
-      list.appendChild(li);
-    });
+    console.log(students);
+    alert("Students loaded successfully 🎉");
   } catch (error) {
     alert("Backend not connected yet!");
     console.error(error);
