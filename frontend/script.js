@@ -1,16 +1,27 @@
+const API_URL = "https://placement-portal-zj38.onrender.com/api/students";
+
 async function loadStudents() {
   try {
-    const response = await fetch(
-      "https://placement-portal-zj38.onrender.com/api/students"
-    );
+    const res = await fetch(API_URL);
 
-    if (!response.ok) {
-      throw new Error("Backend not connected");
+    if (!res.ok) {
+      throw new Error("Server responded with error");
     }
 
-    const students = await response.json();
-    console.log(students);
-    alert("Students loaded successfully 🎉");
+    const students = await res.json();
+
+    // REMOVE ERROR ALERT
+    alert("Backend connected successfully 🎉");
+
+    const list = document.getElementById("studentList");
+    list.innerHTML = "";
+
+    students.forEach((s) => {
+      const li = document.createElement("li");
+      li.textContent = `${s.name} - ${s.branch}`;
+      list.appendChild(li);
+    });
+
   } catch (error) {
     alert("Backend not connected yet!");
     console.error(error);
